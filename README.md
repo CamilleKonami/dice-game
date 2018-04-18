@@ -1,5 +1,6 @@
 Dice Game
 =======
+[Demo](https://camillekonami.github.io/dice-game/index.html)
 
 #### Rules
 
