@@ -1,14 +1,5 @@
-/* CODING CHALLENGES
-
-1. A player looses his entire score when he rolls two 6 in a row. Then it's the next player's turn.
-2. add an input field where players can set the winning scores
-3. add another dice to the game. The player looses his current score when one of them is a 1.
-*/
-
 var scores, roundScore, activePlayer, gamePlaying;
 init();
-
-// var lastDice;
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
   if (gamePlaying) {
@@ -22,22 +13,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     document.getElementById('dice_1').src = 'dice-' + dice_1 + '.png';
     document.getElementById('dice_2').src = 'dice-' + dice_2 + '.png';
 
-    // 3. Update the round score IF the rolled number was NOT a 1
-    // if (lastDice === 6 && dice === 6) {
-    //   scores[activePlayer] = 0;
-    //   document.querySelector('#score-' + activePlayer).textContent = '0';
-    //   nextPlayer();
-    //
-    // } else if (dice !== 1) {
-    //   //Add score
-    //   roundScore += dice;
-    //   document.querySelector('#current-' + activePlayer).textContent = roundScore;
-    //
-    // } else {
-    //   //Next player
-    //   nextPlayer();
-    // }
-    // lastDice = dice;
     if (dice_1 === 1 || dice_2 === 1) {
       //Next player
       nextPlayer();
@@ -48,7 +23,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     }
   }
 });
-
 
 
 document.querySelector('.btn-hold').addEventListener('click',function() {
@@ -63,7 +37,6 @@ document.querySelector('.btn-hold').addEventListener('click',function() {
     } else {
       goalScore = 100;
     }
-
 
     // add CURRENT score to GLOBAL score
     scores[activePlayer] += roundScore;
